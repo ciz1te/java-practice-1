@@ -1,24 +1,21 @@
-package org.example;
-
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int a;
-        while (true) {
-            System.out.println("Ваш год рождения?");
-            Scanner in = new Scanner(System.in);
-            a = in.nextInt();
-            if (a > 2026) {
-                System.out.println("Ошибка, введите заново свой год рождения");
-            } else break; };
-            int age = 2026 - a;
-            if (age < 18) {
-                System.out.println("Вы несовершеннолетний");
-            } else if (age > 18 && age < 65) {
-                System.out.println("Вы взрослый");
-            } else {
-                System.out.println("Вы пенсионер");
+        int[] numbers = {1, 5, 2, 6, 55, 11, 33, 12, 76, 32};
+        System.out.println("Элементы массива" + Arrays.toString(numbers));
+        int sum = 0;
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                sum += num;
             }
-        }
+        } System.out.println("Сумма всех четных элементов массива" + ":" + sum);
+        int count = 0;
+        for (int num : numbers) {
+            if (num % 2 != 0) {
+                count++;
+            }
+        } System.out.println("Кол-во нечетных элементов" + ":" + count);
     }
+}
+
